@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="AdvTableViewCell" customModule="DocumentViewer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-Yuliya" translatesAutoresizingMaskIntoConstraints="NO" id="MsB-sc-CXi">
+                        <rect key="frame" x="0.0" y="0.0" width="135" height="199.5"/>
+                        <color key="backgroundColor" red="0.41019590736040612" green="0.15687095725528941" blue="0.3784903819936673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="135" id="5no-QX-Myw"/>
+                            <constraint firstAttribute="height" constant="199.5" id="6pM-3Y-iFW"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-Yuliya-Reverse" translatesAutoresizingMaskIntoConstraints="NO" id="lH7-PO-YyL">
+                        <rect key="frame" x="185" y="0.0" width="135" height="199.5"/>
+                        <color key="backgroundColor" red="0.4101959074" green="0.1568709573" blue="0.37849038200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="135" id="0pf-Ci-o4d"/>
+                            <constraint firstAttribute="height" constant="199.5" id="eun-hB-JiX"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fha-JX-tr4">
+                        <rect key="frame" x="100" y="49" width="120.5" height="102"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hasta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-Tw-5eP">
+                                <rect key="frame" x="21" y="0.0" width="78" height="34"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="26"/>
+                                <color key="textColor" red="1" green="0.74463824778712939" blue="0.74496738264989171" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="la vista," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhP-yJ-vOU">
+                                <rect key="frame" x="0.0" y="34" width="120.5" height="34"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="26"/>
+                                <color key="textColor" red="1" green="0.74463824779999999" blue="0.74496738259999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="baby!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VI6-vz-qw7">
+                                <rect key="frame" x="24.5" y="68" width="71.5" height="34"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="26"/>
+                                <color key="textColor" red="1" green="0.74463824779999999" blue="0.74496738259999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" red="0.41019590736040612" green="0.15912332579688537" blue="0.38464985097413623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="MsB-sc-CXi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="93O-hW-Ro7"/>
+                    <constraint firstAttribute="bottom" secondItem="MsB-sc-CXi" secondAttribute="bottom" id="CYe-Zs-bma"/>
+                    <constraint firstItem="fha-JX-tr4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Fvw-YH-Dpi"/>
+                    <constraint firstItem="MsB-sc-CXi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HUA-ks-mSK"/>
+                    <constraint firstAttribute="bottom" secondItem="lH7-PO-YyL" secondAttribute="bottom" id="OLe-Yl-tFU"/>
+                    <constraint firstItem="lH7-PO-YyL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Rt5-cz-R2J"/>
+                    <constraint firstAttribute="trailing" secondItem="lH7-PO-YyL" secondAttribute="trailing" id="rk8-6p-jag"/>
+                    <constraint firstItem="fha-JX-tr4" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="xaU-Rd-Ycc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="-88" y="86.35682158920541"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Image-Yuliya" width="603" height="886"/>
+        <image name="Image-Yuliya-Reverse" width="263" height="387"/>
+    </resources>
+</document>
