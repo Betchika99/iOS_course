@@ -1,5 +1,5 @@
 //
-//  Image Cell.swift
+//  MainCollectionViewCell.swift
 //  hw3
 //
 //  Created by Elizabeth Dobryanskaya on 22/12/2018.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ImageCell: UICollectionViewCell {
+class MainCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var mainImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

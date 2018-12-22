@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MainCollectionViewCell" customModule="hw3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="204" height="177"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="204" height="177"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U02-v2-a7M">
+                        <rect key="frame" x="15" y="15" width="174" height="147"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.4101959074" green="0.1568709573" blue="0.37849038200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="U02-v2-a7M" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="7RA-xU-hG4"/>
+                <constraint firstItem="U02-v2-a7M" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="XBG-Jt-fbe"/>
+                <constraint firstAttribute="bottom" secondItem="U02-v2-a7M" secondAttribute="bottom" constant="15" id="pPq-3b-TJl"/>
+                <constraint firstAttribute="trailing" secondItem="U02-v2-a7M" secondAttribute="trailing" constant="15" id="zPq-3C-dBE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="204" height="177"/>
+            <connections>
+                <outlet property="mainImageView" destination="U02-v2-a7M" id="5UY-so-nzO"/>
+            </connections>
+            <point key="canvasLocation" x="176" y="105.69715142428787"/>
+        </collectionViewCell>
+    </objects>
+</document>

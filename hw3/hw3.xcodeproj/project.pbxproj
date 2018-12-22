@@ -13,8 +13,9 @@
 		3EDCB78F21CE847800737682 /* hw3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3EDCB78D21CE847800737682 /* hw3.xcdatamodeld */; };
 		3EDCB79121CE847900737682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EDCB79021CE847900737682 /* Assets.xcassets */; };
 		3EDCB79421CE847900737682 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDCB79221CE847900737682 /* LaunchScreen.storyboard */; };
-		3EDCB79F21CE916C00737682 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDCB79D21CE916C00737682 /* ImageCell.swift */; };
-		3EDCB7A021CE916C00737682 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EDCB79E21CE916C00737682 /* ImageCell.xib */; };
+		3EDCB7AD21CECAD600737682 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDCB7AB21CECAD600737682 /* MainCollectionViewCell.swift */; };
+		3EDCB7AE21CECAD600737682 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EDCB7AC21CECAD600737682 /* MainCollectionViewCell.xib */; };
+		3EDCB7B021CECD3B00737682 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDCB7AF21CECD3B00737682 /* PhotoInfo.swift */; };
 		96364868083D998F20EC72B3 /* Pods_hw3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FBE57C3F6ABA8DF5A99585 /* Pods_hw3.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +29,9 @@
 		3EDCB79021CE847900737682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EDCB79321CE847900737682 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EDCB79521CE847900737682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3EDCB79D21CE916C00737682 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		3EDCB79E21CE916C00737682 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		3EDCB7AB21CECAD600737682 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		3EDCB7AC21CECAD600737682 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
+		3EDCB7AF21CECD3B00737682 /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 		92BBD5AD67CC890D4B09123B /* Pods-hw3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hw3.release.xcconfig"; path = "Pods/Target Support Files/Pods-hw3/Pods-hw3.release.xcconfig"; sourceTree = "<group>"; };
 		C7FBE57C3F6ABA8DF5A99585 /* Pods_hw3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hw3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,12 +72,13 @@
 				3EDCB78621CE847800737682 /* AppDelegate.swift */,
 				3EDCB78821CE847800737682 /* ViewController.swift */,
 				3EDCB78A21CE847800737682 /* Main.storyboard */,
-				3EDCB79D21CE916C00737682 /* ImageCell.swift */,
-				3EDCB79E21CE916C00737682 /* ImageCell.xib */,
 				3EDCB79021CE847900737682 /* Assets.xcassets */,
 				3EDCB79221CE847900737682 /* LaunchScreen.storyboard */,
 				3EDCB79521CE847900737682 /* Info.plist */,
 				3EDCB78D21CE847800737682 /* hw3.xcdatamodeld */,
+				3EDCB7AB21CECAD600737682 /* MainCollectionViewCell.swift */,
+				3EDCB7AC21CECAD600737682 /* MainCollectionViewCell.xib */,
+				3EDCB7AF21CECD3B00737682 /* PhotoInfo.swift */,
 			);
 			path = hw3;
 			sourceTree = "<group>";
@@ -159,8 +162,8 @@
 			files = (
 				3EDCB79421CE847900737682 /* LaunchScreen.storyboard in Resources */,
 				3EDCB79121CE847900737682 /* Assets.xcassets in Resources */,
-				3EDCB7A021CE916C00737682 /* ImageCell.xib in Resources */,
 				3EDCB78C21CE847800737682 /* Main.storyboard in Resources */,
+				3EDCB7AE21CECAD600737682 /* MainCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +223,9 @@
 			files = (
 				3EDCB78921CE847800737682 /* ViewController.swift in Sources */,
 				3EDCB78F21CE847800737682 /* hw3.xcdatamodeld in Sources */,
-				3EDCB79F21CE916C00737682 /* ImageCell.swift in Sources */,
 				3EDCB78721CE847800737682 /* AppDelegate.swift in Sources */,
+				3EDCB7AD21CECAD600737682 /* MainCollectionViewCell.swift in Sources */,
+				3EDCB7B021CECD3B00737682 /* PhotoInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
