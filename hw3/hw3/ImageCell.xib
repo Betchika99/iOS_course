@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="gTV-IL-0wX" customClass="ImageCell" customModule="hw3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="313" height="271"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="313" height="271"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OtC-tq-iCt">
+                        <rect key="frame" x="15" y="15" width="283" height="241"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NnR-wu-Xjc">
+                                <rect key="frame" x="0.0" y="0.0" width="283" height="241"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="nPC-N1-cfN">
+                                <rect key="frame" x="131.5" y="110.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.041011055089999998" green="0.34810449199999999" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NnR-wu-Xjc" firstAttribute="top" secondItem="OtC-tq-iCt" secondAttribute="top" id="4PQ-uk-cxx"/>
+                            <constraint firstItem="nPC-N1-cfN" firstAttribute="centerY" secondItem="OtC-tq-iCt" secondAttribute="centerY" id="IRU-Le-dME"/>
+                            <constraint firstAttribute="bottom" secondItem="NnR-wu-Xjc" secondAttribute="bottom" id="Z8D-QH-ME6"/>
+                            <constraint firstItem="NnR-wu-Xjc" firstAttribute="leading" secondItem="OtC-tq-iCt" secondAttribute="leading" id="ZkB-wD-ul4"/>
+                            <constraint firstAttribute="trailing" secondItem="NnR-wu-Xjc" secondAttribute="trailing" id="pMH-aX-BTe"/>
+                            <constraint firstItem="nPC-N1-cfN" firstAttribute="centerX" secondItem="OtC-tq-iCt" secondAttribute="centerX" id="rqF-WD-0CB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="OtC-tq-iCt" secondAttribute="trailing" constant="15" id="G8a-wP-nwR"/>
+                <constraint firstItem="OtC-tq-iCt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="TKY-TG-La6"/>
+                <constraint firstItem="OtC-tq-iCt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="ZKJ-04-KF8"/>
+                <constraint firstAttribute="bottom" secondItem="OtC-tq-iCt" secondAttribute="bottom" constant="15" id="njG-s7-m6o"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="313" height="271"/>
+            <point key="canvasLocation" x="76" y="69.715142428785612"/>
+        </collectionViewCell>
+    </objects>
+</document>
