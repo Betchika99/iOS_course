@@ -18,7 +18,7 @@ class ViewController: UIViewController,
     @IBOutlet weak var collectionView: UICollectionView!
     
     var photos: [PhotoInfo] = []
-    
+    var models: [PhotoModel] = []
     var realm: Realm!
     
     override func viewDidLoad() {
@@ -41,18 +41,17 @@ class ViewController: UIViewController,
                     guard let jsonArray = value as? Array<[String: Any]> else { return }
                     
                     for jsonObject in jsonArray {
-                        let photo = PhotoInfo(value: jsonObject)
+                    //    let photo = PhotoInfo(value: jsonObject)
                         let current = PhotoInfo()
-                        current.albumId  = photo.albumId
-                        current.id = photo.id
-                        current.title = photo.title
-                        current.url = photo.url
-                        current.thumbnailUrl = photo.thumbnailUrl
+                        current.albumId  = jsonObject["albumId"] as! Int
+                        current.id = jsonObject["id"] as! Int
+                        current.title = jsonObject["title"] as! String
+                        current.url = jsonObject["url"] as! String
+                        current.thumbnailUrl = jsonObject["thumbnailUrl"] as! String
                         try! self.realm.write {
                             self.realm.add(current, update: true)
                         }
-                       
-                        self.photos.append(photo)
+                        self.photos.append(current)
                     }
                     self.collectionView.reloadData()
                  //   print(self.photos)
@@ -65,7 +64,7 @@ class ViewController: UIViewController,
     
     // кол-во ячеек в секции
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        return models.count
     }
     
     // задаем размеры ячеек
@@ -77,29 +76,33 @@ class ViewController: UIViewController,
     
     // возвращает ячейку по определенному индексу
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as? MainCollectionViewCell else { return UICollectionViewCell() }
+        let model = models[indexPath.item]
+        cell.configureWith(model: model)
+        return cell
       //  cell.mainImageView.backgroundColor = UIColor.green
-        let index = indexPath.section * 3 + indexPath.row
-        if (photos.isEmpty) {
-            print ("ERROR")
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BitCollectionViewCell", for: indexPath) as! BitCollectionViewCell
-            cell.index = index
-            return cell
-        }
-        else {
-            if (index % 10 == 0) {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BitCollectionViewCell", for: indexPath) as! BitCollectionViewCell
-                cell.index = index
-                cell.retryButton.tag = index
-                cell.retryButton.addTarget(self, action: #selector(reloadBitItem), for: .touchUpInside)
-                return cell
-            } else {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as! MainCollectionViewCell
-                let imgURL: NSURL = NSURL(string: photos[index].url)!
-                let imgData: NSData = NSData(contentsOf: imgURL as URL)!
-                cell.mainImageView.image = UIImage(data: imgData as Data)
-                return cell
-            }
-        }
+//        let index = indexPath.section * 3 + indexPath.row
+//        if (photos.isEmpty) {
+//            print ("ERROR")
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BitCollectionViewCell", for: indexPath) as! BitCollectionViewCell
+//            cell.index = index
+//            return cell
+//        }
+//        else {
+//            if (index % 10 == 0) {
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BitCollectionViewCell", for: indexPath) as! BitCollectionViewCell
+//                cell.index = index
+//                cell.retryButton.tag = index
+//                cell.retryButton.addTarget(self, action: #selector(reloadBitItem), for: .touchUpInside)
+//                return cell
+//            } else {
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as! MainCollectionViewCell
+//                let imgURL: NSURL = NSURL(string: photos[index].url)!
+//                let imgData: NSData = NSData(contentsOf: imgURL as URL)!
+//                cell.mainImageView.image = UIImage(data: imgData as Data)
+//                return cell
+//            }
+//        }
     }
     
     // для перезагрузки определенных ячеек
