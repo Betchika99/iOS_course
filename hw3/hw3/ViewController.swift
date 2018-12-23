@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class ViewController: UIViewController,
                       UICollectionViewDataSource,
@@ -18,13 +19,17 @@ class ViewController: UIViewController,
     
     var photos: [PhotoInfo] = []
     
+    var realm: Realm!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        realm = try! Realm()
         collectionView.dataSource = self
         collectionView.delegate = self
         // регистрируем ниб-файлы
         collectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
+        collectionView.register(UINib(nibName: "BitCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BitCollectionViewCell")
+        print(realm.configuration.fileURL!)
         getJSON()
     }
     
@@ -36,9 +41,20 @@ class ViewController: UIViewController,
                     guard let jsonArray = value as? Array<[String: Any]> else { return }
                     
                     for jsonObject in jsonArray {
-                        guard let photo = PhotoInfo(json: jsonObject) else { return }
+                        let photo = PhotoInfo(value: jsonObject)
+                        let current = PhotoInfo()
+                        current.albumId  = photo.albumId
+                        current.id = photo.id
+                        current.title = photo.title
+                        current.url = photo.url
+                        current.thumbnailUrl = photo.thumbnailUrl
+                        try! self.realm.write {
+                            self.realm.add(current, update: true)
+                        }
+                       
                         self.photos.append(photo)
                     }
+                    self.collectionView.reloadData()
                  //   print(self.photos)
                 
                 case .failure(let error):
@@ -47,14 +63,9 @@ class ViewController: UIViewController,
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        collectionView.reloadData()
-    }
-    
     // кол-во ячеек в секции
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 27
+        return 50
     }
     
     // задаем размеры ячеек
@@ -66,23 +77,46 @@ class ViewController: UIViewController,
     
     // возвращает ячейку по определенному индексу
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print ("2")
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as! MainCollectionViewCell
       //  cell.mainImageView.backgroundColor = UIColor.green
-        let index = indexPath.row * 3 + indexPath.section
-        if (photos.isEmpty) { print ("ERROR") }
-        else { let imgURL: NSURL = NSURL(string: photos[index].url)!
-        let imgData: NSData = NSData(contentsOf: imgURL as URL)!
-        cell.mainImageView.image = UIImage(data: imgData as Data)
+        let index = indexPath.section * 3 + indexPath.row
+        if (photos.isEmpty) {
+            print ("ERROR")
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BitCollectionViewCell", for: indexPath) as! BitCollectionViewCell
+            cell.index = index
+            return cell
         }
-        return cell
+        else {
+            if (index % 10 == 0) {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BitCollectionViewCell", for: indexPath) as! BitCollectionViewCell
+                cell.index = index
+                cell.retryButton.tag = index
+                cell.retryButton.addTarget(self, action: #selector(reloadBitItem), for: .touchUpInside)
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as! MainCollectionViewCell
+                let imgURL: NSURL = NSURL(string: photos[index].url)!
+                let imgData: NSData = NSData(contentsOf: imgURL as URL)!
+                cell.mainImageView.image = UIImage(data: imgData as Data)
+                return cell
+            }
+        }
     }
     
     // для перезагрузки определенных ячеек
-    func reloadItemAtIndexPath() {
+    func reloadItemAtIndexPath(indexPath: IndexPath) {
         var indexArray: [IndexPath] = [IndexPath]()
-        indexArray.append(IndexPath(row: 0, section: 1))
-        indexArray.append(IndexPath(row: 0, section: 0))
+        indexArray.append(indexPath)
         collectionView.reloadItems(at: indexArray)
+    }
+    
+    @objc func reloadBitItem(sender: UIButton!) {
+        print(sender.tag)
+        let section = sender.tag / 3
+        let row = sender.tag % 3
+        let indexPath = NSIndexPath(row: row, section: section)
+      /*  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath as IndexPath) as! MainCollectionViewCell
+        let cell = collectionView.cellForItem(at: indexPath as IndexPath)
+        cell.mainImageView.image = UIImage(named: "Catik")! */
+        reloadItemAtIndexPath(indexPath: indexPath as IndexPath)
     }
 }

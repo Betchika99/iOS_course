@@ -7,4 +7,5 @@ target 'hw3' do
 
   # Pods for hw3
 	pod 'Alamofire'
+	pod 'RealmSwift'
 end

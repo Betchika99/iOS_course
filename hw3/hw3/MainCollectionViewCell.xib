@@ -22,11 +22,16 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U02-v2-a7M">
                         <rect key="frame" x="15" y="15" width="174" height="147"/>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="xJb-GM-Etw">
+                        <rect key="frame" x="92" y="78.5" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.4101959074" green="0.1568709573" blue="0.37849038200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="U02-v2-a7M" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="7RA-xU-hG4"/>
+                <constraint firstItem="xJb-GM-Etw" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="JDN-Mz-b8C"/>
+                <constraint firstItem="xJb-GM-Etw" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Mdk-xo-UnN"/>
                 <constraint firstItem="U02-v2-a7M" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="XBG-Jt-fbe"/>
                 <constraint firstAttribute="bottom" secondItem="U02-v2-a7M" secondAttribute="bottom" constant="15" id="pPq-3b-TJl"/>
                 <constraint firstAttribute="trailing" secondItem="U02-v2-a7M" secondAttribute="trailing" constant="15" id="zPq-3C-dBE"/>
@@ -34,6 +39,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="204" height="177"/>
             <connections>
+                <outlet property="mainActivator" destination="xJb-GM-Etw" id="2RR-Wp-L07"/>
                 <outlet property="mainImageView" destination="U02-v2-a7M" id="5UY-so-nzO"/>
             </connections>
             <point key="canvasLocation" x="176" y="105.69715142428787"/>

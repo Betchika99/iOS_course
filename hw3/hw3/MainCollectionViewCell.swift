@@ -11,6 +11,7 @@ import UIKit
 class MainCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var mainActivator: UIActivityIndicatorView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

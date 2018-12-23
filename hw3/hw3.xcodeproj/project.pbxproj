@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E2AD16321CFA6320093A293 /* BitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2AD16121CFA6320093A293 /* BitCollectionViewCell.swift */; };
+		3E2AD16421CFA6320093A293 /* BitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E2AD16221CFA6320093A293 /* BitCollectionViewCell.xib */; };
 		3EDCB78721CE847800737682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDCB78621CE847800737682 /* AppDelegate.swift */; };
 		3EDCB78921CE847800737682 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDCB78821CE847800737682 /* ViewController.swift */; };
 		3EDCB78C21CE847800737682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDCB78A21CE847800737682 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		19DCB8DE22648EB8C3240800 /* Pods-hw3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hw3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hw3/Pods-hw3.debug.xcconfig"; sourceTree = "<group>"; };
+		3E2AD16121CFA6320093A293 /* BitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitCollectionViewCell.swift; sourceTree = "<group>"; };
+		3E2AD16221CFA6320093A293 /* BitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BitCollectionViewCell.xib; sourceTree = "<group>"; };
 		3EDCB78321CE847800737682 /* hw3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hw3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDCB78621CE847800737682 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EDCB78821CE847800737682 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 				3EDCB7AB21CECAD600737682 /* MainCollectionViewCell.swift */,
 				3EDCB7AC21CECAD600737682 /* MainCollectionViewCell.xib */,
 				3EDCB7AF21CECD3B00737682 /* PhotoInfo.swift */,
+				3E2AD16121CFA6320093A293 /* BitCollectionViewCell.swift */,
+				3E2AD16221CFA6320093A293 /* BitCollectionViewCell.xib */,
 			);
 			path = hw3;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EDCB79421CE847900737682 /* LaunchScreen.storyboard in Resources */,
+				3E2AD16421CFA6320093A293 /* BitCollectionViewCell.xib in Resources */,
 				3EDCB79121CE847900737682 /* Assets.xcassets in Resources */,
 				3EDCB78C21CE847800737682 /* Main.storyboard in Resources */,
 				3EDCB7AE21CECAD600737682 /* MainCollectionViewCell.xib in Resources */,
@@ -202,12 +209,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-hw3/Pods-hw3-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -225,6 +236,7 @@
 				3EDCB78F21CE847800737682 /* hw3.xcdatamodeld in Sources */,
 				3EDCB78721CE847800737682 /* AppDelegate.swift in Sources */,
 				3EDCB7AD21CECAD600737682 /* MainCollectionViewCell.swift in Sources */,
+				3E2AD16321CFA6320093A293 /* BitCollectionViewCell.swift in Sources */,
 				3EDCB7B021CECD3B00737682 /* PhotoInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
