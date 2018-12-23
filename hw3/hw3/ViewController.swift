@@ -25,7 +25,6 @@ class ViewController: UIViewController,
         collectionView.delegate = self
         // регистрируем ниб-файлы
         collectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
-        print ("0")
         getJSON()
     }
     
@@ -46,7 +45,6 @@ class ViewController: UIViewController,
                     print(error)
             }
         }
-        print ("1")
     }
     
     override func viewWillAppear(_ animated: Bool) {
