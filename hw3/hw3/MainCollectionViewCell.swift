@@ -33,6 +33,7 @@ class MainCollectionViewCell: UICollectionViewCell {
         }
         if model.status == .success {
             mainActivator.stopAnimating()
+            mainActivator.hidesWhenStopped = true
             mainImageView.image = model.photo
         }
         if model.status == .error {

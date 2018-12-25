@@ -30,13 +30,13 @@ class PhotoModel {
         status = .loading
         DispatchQueue.global().async {
             sleep(3)
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else {return}
-                self.status = .success
-                Alamofire.request(self.photoURL).responseImage { response in
+            Alamofire.request(self.photoURL).responseImage { response in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else {return}
+                    self.status = .success
                     self.photo = response.result.value
+                    successBlock(self)
                 }
-                successBlock(self)
             }
         }
     }
