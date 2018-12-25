@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 enum ModelStatus {
     case inited
@@ -25,14 +27,15 @@ class PhotoModel {
     
     func loadPhoto(successBlock: @escaping (PhotoModel) -> (),
                    errorBlock: @escaping () -> ()) {
-        // типо загрузка
         status = .loading
         DispatchQueue.global().async {
             sleep(3)
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else {return}
                 self.status = .success
-                self.photo = UIImage(named: "Success")
+                Alamofire.request(self.photoURL).responseImage { response in
+                    self.photo = response.result.value
+                }
                 successBlock(self)
             }
         }

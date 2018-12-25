@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 import RealmSwift
 
 class ViewController: UIViewController,
@@ -19,18 +20,17 @@ class ViewController: UIViewController,
     
     var photos: [PhotoInfo] = []
     var models: [PhotoModel] = []
+    var i = 0
     var realm: Realm!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getJSON()
         realm = try! Realm()
         collectionView.dataSource = self
         collectionView.delegate = self
-        // регистрируем ниб-файлы
         collectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
-        collectionView.register(UINib(nibName: "BitCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BitCollectionViewCell")
-        print(realm.configuration.fileURL!)
-        getJSON()
+       // print(realm.configuration.fileURL!)
     }
     
     func getJSON() {
@@ -39,21 +39,18 @@ class ViewController: UIViewController,
                 case .success(let value):
                     
                     guard let jsonArray = value as? Array<[String: Any]> else { return }
-                    
                     for jsonObject in jsonArray {
-                    //    let photo = PhotoInfo(value: jsonObject)
-                        let current = PhotoInfo()
-                        current.albumId  = jsonObject["albumId"] as! Int
-                        current.id = jsonObject["id"] as! Int
-                        current.title = jsonObject["title"] as! String
-                        current.url = jsonObject["url"] as! String
-                        current.thumbnailUrl = jsonObject["thumbnailUrl"] as! String
-                        try! self.realm.write {
-                            self.realm.add(current, update: true)
+                        if (self.i == 27) {
+                            break
                         }
-                        self.photos.append(current)
+                        let url = jsonObject["url"] as! String
+                        let current = PhotoModel(url: url)
+                        self.models.append(current)
                     }
-                    self.collectionView.reloadData()
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                    self.i += 1
                  //   print(self.photos)
                 
                 case .failure(let error):
@@ -64,7 +61,11 @@ class ViewController: UIViewController,
     
     // кол-во ячеек в секции
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return models.count
+        if (models.count > 0) {
+            return 27
+        } else {
+            return models.count
+        }
     }
     
     // задаем размеры ячеек
@@ -77,6 +78,7 @@ class ViewController: UIViewController,
     // возвращает ячейку по определенному индексу
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as? MainCollectionViewCell else { return UICollectionViewCell() }
+        print(models.count)
         let model = models[indexPath.item]
         cell.configureWith(model: model)
         return cell

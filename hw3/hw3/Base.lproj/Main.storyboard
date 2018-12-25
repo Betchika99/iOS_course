@@ -60,5 +60,45 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="QHR-1y-Usd">
+            <objects>
+                <viewController id="TED-n2-rXR" customClass="TableViewController" customModule="hw3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aus-eF-qyz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8ZW-kq-jta">
+                                <rect key="frame" x="0.0" y="48" width="375" height="619"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oYc-Jw-Dk7">
+                                <rect key="frame" x="104" y="20" width="167" height="29"/>
+                                <segments>
+                                    <segment title="Connect"/>
+                                    <segment title="Disconnect"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8ZW-kq-jta" firstAttribute="leading" secondItem="NN4-Qn-SOE" secondAttribute="leading" id="FBD-Ke-u5k"/>
+                            <constraint firstItem="oYc-Jw-Dk7" firstAttribute="top" secondItem="NN4-Qn-SOE" secondAttribute="top" id="TH2-pv-fKQ"/>
+                            <constraint firstItem="NN4-Qn-SOE" firstAttribute="trailing" secondItem="8ZW-kq-jta" secondAttribute="trailing" id="U2Y-d5-HtG"/>
+                            <constraint firstItem="oYc-Jw-Dk7" firstAttribute="centerX" secondItem="Aus-eF-qyz" secondAttribute="centerX" id="g4R-GS-iu9"/>
+                            <constraint firstItem="8ZW-kq-jta" firstAttribute="top" secondItem="oYc-Jw-Dk7" secondAttribute="bottom" id="g78-Yg-DW1"/>
+                            <constraint firstItem="NN4-Qn-SOE" firstAttribute="bottom" secondItem="8ZW-kq-jta" secondAttribute="bottom" id="nw7-jr-QsF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NN4-Qn-SOE"/>
+                    </view>
+                    <connections>
+                        <outlet property="segment" destination="oYc-Jw-Dk7" id="gRe-og-I9I"/>
+                        <outlet property="tableView" destination="8ZW-kq-jta" id="BNO-io-xga"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4r-Xc-Ufz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892" y="133.5832083958021"/>
+        </scene>
     </scenes>
 </document>

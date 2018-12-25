@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class MainCollectionViewCell: UICollectionViewCell {
 
@@ -17,12 +19,14 @@ class MainCollectionViewCell: UICollectionViewCell {
             model.loadPhoto(successBlock: {
                 [weak self] loadedModel in
                 // то же самое, что и .success
-                loadedModel.mainActivator.stopAnimating()
-                loadedModel.mainImageView.image = loadedModel.photo
+                guard let self = self else {return}
+                self.mainActivator.stopAnimating()
+                self.mainImageView.image = model.photo
                 }, errorBlock: {
-                [weak self] in
-                // то же самое, что и .error
-                })
+                    [weak self] in
+                    guard let self = self else {return}
+                    // то же самое, что и .error
+            })
         }
         if model.status == .loading {
             mainActivator.startAnimating()
