@@ -10,22 +10,30 @@ import UIKit
 
 class TableViewController : UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
-    @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
-    let photoInfos: [PhotoModel] = []
+    var dbPhotos: [PhotoInfo] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dbPhotos = DBPhoto.readOnDB()
+        tableView.dataSource = self
+        tableView.delegate = self
+        let mainNib = UINib.init(nibName: "DBTableViewCell", bundle: nil)
+        tableView.register(mainNib, forCellReuseIdentifier: "DBTableViewCell")
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photoInfos.count
+        return dbPhotos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /* let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as! MainTableViewCell
-        let titleIndex = indexPath.row/3;
-        cell.documentName.text = nameDocuments[indexPath.row - titleIndex]
-        cell.documentImageView.image = UIImage(named: "Image")
-        return cell */
-        return UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DBTableViewCell", for: indexPath) as! DBTableViewCell
+        cell.idLabel.text = "ID:\(dbPhotos[indexPath.item].id)"
+        cell.titleLabel.text = "Title:\(dbPhotos[indexPath.item].title)"
+        cell.urlLabel.text = "URL:\(dbPhotos[indexPath.item].url)"
+        return cell
     }
     
 }

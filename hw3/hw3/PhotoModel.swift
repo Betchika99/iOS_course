@@ -33,9 +33,16 @@ class PhotoModel {
             Alamofire.request(self.photoURL).responseImage { response in
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else {return}
-                    self.status = .success
-                    self.photo = response.result.value
-                    successBlock(self)
+                    switch response.result {
+                    case .success:
+                        self.status = .success
+                        self.photo = response.result.value
+                        successBlock(self)
+                    case .failure(let error):
+                        print("PIPEC_ERROR:",error)
+                        self.status = .error
+                        errorBlock()
+                    }
                 }
             }
         }

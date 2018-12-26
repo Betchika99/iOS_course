@@ -19,30 +19,73 @@
                 <rect key="frame" x="0.0" y="0.0" width="204" height="177"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U02-v2-a7M">
-                        <rect key="frame" x="15" y="15" width="174" height="147"/>
-                    </imageView>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="xJb-GM-Etw">
-                        <rect key="frame" x="92" y="78.5" width="20" height="20"/>
-                    </activityIndicatorView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2z-pz-0fz">
+                        <rect key="frame" x="0.0" y="0.0" width="204" height="177"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U02-v2-a7M">
+                                <rect key="frame" x="15" y="15" width="174" height="147"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="xJb-GM-Etw">
+                                <rect key="frame" x="92" y="78.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.4101959074" green="0.15912332579999999" blue="0.38464985099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xJb-GM-Etw" firstAttribute="centerX" secondItem="m2z-pz-0fz" secondAttribute="centerX" id="B6r-Z2-KJA"/>
+                            <constraint firstAttribute="bottom" secondItem="U02-v2-a7M" secondAttribute="bottom" constant="15" id="Pqg-wO-scl"/>
+                            <constraint firstItem="U02-v2-a7M" firstAttribute="leading" secondItem="m2z-pz-0fz" secondAttribute="leading" constant="15" id="Z4O-Yu-hXr"/>
+                            <constraint firstItem="U02-v2-a7M" firstAttribute="top" secondItem="m2z-pz-0fz" secondAttribute="top" constant="15" id="bHy-Wx-MO5"/>
+                            <constraint firstAttribute="trailing" secondItem="U02-v2-a7M" secondAttribute="trailing" constant="15" id="ixV-sy-6uT"/>
+                            <constraint firstItem="xJb-GM-Etw" firstAttribute="centerY" secondItem="m2z-pz-0fz" secondAttribute="centerY" id="ouq-le-N9f"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRj-l2-ynf">
+                        <rect key="frame" x="0.0" y="0.0" width="204" height="177"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="TroubleImage" translatesAutoresizingMaskIntoConstraints="NO" id="WWq-Do-WM4">
+                                <rect key="frame" x="15" y="5" width="174" height="108"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-tE-FKq">
+                                <rect key="frame" x="0.0" y="124" width="204" height="48"/>
+                                <state key="normal" title="Retry"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.24070860661069596" green="0.55294117649999996" blue="0.24353212275926586" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dOH-tE-FKq" firstAttribute="leading" secondItem="MRj-l2-ynf" secondAttribute="leading" id="4kQ-J5-fuL"/>
+                            <constraint firstItem="WWq-Do-WM4" firstAttribute="top" secondItem="MRj-l2-ynf" secondAttribute="top" constant="5" id="El8-yE-V3j"/>
+                            <constraint firstAttribute="trailing" secondItem="WWq-Do-WM4" secondAttribute="trailing" constant="15" id="U4z-FJ-jZl"/>
+                            <constraint firstAttribute="trailing" secondItem="dOH-tE-FKq" secondAttribute="trailing" id="ViF-aq-2Dv"/>
+                            <constraint firstAttribute="bottom" secondItem="dOH-tE-FKq" secondAttribute="bottom" constant="5" id="hCh-gt-TCj"/>
+                            <constraint firstItem="WWq-Do-WM4" firstAttribute="leading" secondItem="MRj-l2-ynf" secondAttribute="leading" constant="15" id="waK-qR-cSI"/>
+                            <constraint firstItem="dOH-tE-FKq" firstAttribute="top" secondItem="WWq-Do-WM4" secondAttribute="bottom" constant="11" id="xZ9-5r-XUV"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.4101959074" green="0.1568709573" blue="0.37849038200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="U02-v2-a7M" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="7RA-xU-hG4"/>
-                <constraint firstItem="xJb-GM-Etw" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="JDN-Mz-b8C"/>
-                <constraint firstItem="xJb-GM-Etw" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Mdk-xo-UnN"/>
-                <constraint firstItem="U02-v2-a7M" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="XBG-Jt-fbe"/>
-                <constraint firstAttribute="bottom" secondItem="U02-v2-a7M" secondAttribute="bottom" constant="15" id="pPq-3b-TJl"/>
-                <constraint firstAttribute="trailing" secondItem="U02-v2-a7M" secondAttribute="trailing" constant="15" id="zPq-3C-dBE"/>
+                <constraint firstItem="m2z-pz-0fz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="43d-Ma-z4U"/>
+                <constraint firstAttribute="trailing" secondItem="m2z-pz-0fz" secondAttribute="trailing" id="Q29-fb-q0l"/>
+                <constraint firstItem="m2z-pz-0fz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bLD-Xf-0GY"/>
+                <constraint firstAttribute="bottom" secondItem="MRj-l2-ynf" secondAttribute="bottom" id="bUW-7x-sQa"/>
+                <constraint firstItem="MRj-l2-ynf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jrj-eG-kWk"/>
+                <constraint firstItem="MRj-l2-ynf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rDN-la-Pu1"/>
+                <constraint firstAttribute="trailing" secondItem="MRj-l2-ynf" secondAttribute="trailing" id="u9I-JU-0NU"/>
+                <constraint firstAttribute="bottom" secondItem="m2z-pz-0fz" secondAttribute="bottom" id="ugZ-Bt-xoD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="204" height="177"/>
             <connections>
+                <outlet property="bitView" destination="MRj-l2-ynf" id="7xF-Wj-c1y"/>
                 <outlet property="mainActivator" destination="xJb-GM-Etw" id="2RR-Wp-L07"/>
                 <outlet property="mainImageView" destination="U02-v2-a7M" id="5UY-so-nzO"/>
+                <outlet property="retryButton" destination="dOH-tE-FKq" id="GqZ-Vb-va1"/>
             </connections>
             <point key="canvasLocation" x="176" y="105.69715142428787"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="TroubleImage" width="108.54271697998047" height="108.54271697998047"/>
+    </resources>
 </document>
